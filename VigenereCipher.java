@@ -14,14 +14,14 @@ class VigenereCipher {
 			str = "LOVENEVERFAILS";
 			key = "KEY";
 		}
-		else if ( args.length == 1 ){
+		else if ( args.length == 1 ) {
 			System.out.println( "no key input, default key = \"key\"" );
 			input = args[0];
 			str = input.toUpperCase();
 			key = "KEY";
 		}
 		else {
-			for (int i=0; i<args.length-1; i++) {
+			for ( int i=0; i<args.length-1; i++ ) {
 				input += args[i] + " ";
 				str += args[i].toUpperCase();
 				key = args[args.length-1].toUpperCase();
