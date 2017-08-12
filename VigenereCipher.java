@@ -42,7 +42,7 @@ class VigenereCipher {
 			shift = i % key.length();
 			code = ( (int)str.charAt(i) + (int)key.charAt(shift) ) % 26 + (int)'A';
 		
-			System.out.println( str.charAt(i) + "-->" + (char)code + " (shift: " + (((int)key.charAt(shift) + 65 + 1) % 26) + ")" );
+			System.out.println( str.charAt(i) + "-->" + (char)code + " (shift: " + (((int)key.charAt(shift) + 65) % 26) + ")" );
 			codeArr[i] = (char)code;
 		}
 
