@@ -32,11 +32,9 @@ class AutokeyCipher {
 		System.out.println( '\n' + "Auto Key : " + autoKey + '\n' );
 
 		encrypt( str, autoKey );
-	
 	}
 
 	static String encryptRules( String str, String key ) {
-
 		int keyLength = str.length();
 		String autoKey = (key + str);
 		autoKey = autoKey.substring(0, keyLength);
@@ -47,9 +45,9 @@ class AutokeyCipher {
 	static void encrypt( String str, String autoKey ) {
 		int code = 0;
 		char[] codeArr = new char[str.length()];
+		
 		for ( int i=0; i<str.length(); i++ ) {
-			code = ( (int)str.charAt(i) + (int)autoKey.charAt(i) ) % 26 + (int)'A';
-			
+			code = ( (int)str.charAt(i) + (int)autoKey.charAt(i) ) % 26 + (int)'A';			
 			System.out.println( str.charAt(i) + "-->" + (char)code + "(shift: " + (((int)autoKey.charAt(i) + 65) % 26) + ")" );
 			codeArr[i] = (char)code;
 		}
@@ -58,7 +56,4 @@ class AutokeyCipher {
 		for ( int i=0; i<str.length(); i++ ) System.out.print( codeArr[i] );
 		System.out.println();
 	}
-
-
-
 }
