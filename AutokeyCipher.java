@@ -47,7 +47,7 @@ class AutokeyCipher {
 	static void encrypt( String str, String autoKey ) {
 		int code = 0;
 		char[] codeArr = new char[str.length()];
-		for ( int i=0; i<str.length(); i++) {
+		for ( int i=0; i<str.length(); i++ ) {
 			code = ( (int)str.charAt(i) + (int)autoKey.charAt(i) ) % 26 + (int)'A';
 			
 			System.out.println( str.charAt(i) + "-->" + (char)code + "(shift: " + (((int)autoKey.charAt(i) + 65) % 26) + ")" );
