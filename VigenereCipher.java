@@ -28,7 +28,7 @@ class VigenereCipher {
 			}
 		}
 		int keyLength = key.length();
-		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "Key       : " + key + "   (length: " + keyLength + ")" );
+		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "Key       : " + key + "   (length: " + keyLength + ")" + '\n' );
 
 		encrypt( str, key );
 	}
@@ -46,7 +46,7 @@ class VigenereCipher {
 			codeArr[i] = (char)code;
 		}
 
-		System.out.print( "Ciphertext: " );
+		System.out.print( '\n' + "Plaintext : " + str + '\n' + "Ciphertext: " );
 		for ( int i=0; i<str.length(); i++ ) System.out.print( codeArr[i] );
 		System.out.println();
 	}
