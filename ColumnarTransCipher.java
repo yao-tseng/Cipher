@@ -28,6 +28,7 @@ class ColumnarTransCipher {
 			}
 		}
 		int keyLength = key.length();
+		int strLength = str.length();
 		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "Key       : " + key + "   (length: " + keyLength + ")" + '\n' );
 
 		encryptRules( str, key );
@@ -77,9 +78,7 @@ class ColumnarTransCipher {
 			columnCnt = columnCnt + 1;
 		}
 
-		System.out.println( '\n' + "-------------------------" + 
-				'\n' + "strLen:" + strLen + 
-				'\n' + "keyLen:" + keyLen + '\n' );
+		System.out.println( '\n' + "-------------------------" );
 		for ( int j=0; j<keyLen; j++ ) System.out.print( sortedKeyArr[j] );
 		System.out.println();
 		for ( int j=0; j<keyLen; j++ ) System.out.print( keyArr[j] );
