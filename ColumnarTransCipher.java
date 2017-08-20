@@ -29,7 +29,7 @@ class ColumnarTransCipher {
 		}
 		int keyLen = key.length();
 		int strLen = str.length();
-		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "   (length: " + strLen + ")" +'\n' + "Key       : " + key + '\n' + "   (length: " + keyLen + ")" + '\n' );
+		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "   (length: " + strLen + ")" +'\n' + "Key       : " + key + '\n' + "   (length: " + keyLen + ")" );
 		
 		encryptRules( str, key, keyLen, strLen );
 	}
