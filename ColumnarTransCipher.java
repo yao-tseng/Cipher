@@ -75,6 +75,14 @@ class ColumnarTransCipher {
 			columnCnt = columnCnt + 1;
 		}
 		
+		System.out.print( "Ciphertext: " );
+		for ( int j=0; j<codeArr.length; j++ ) System.out.print( codeArr[j] );
+		System.out.println();
+
+		System.out.println( '\n' + "--convert rules--" );
+		for ( int j=0; j<keyLen; j++ ) System.out.print( "  " + keyArr[j] );
+		System.out.println();
+		
 		if ( order[0]<9 ) System.out.print( " 0" + (order[0]+1) );
 			else System.out.print( " " + (order[0]+1) );
 		for ( int j=1; j<keyLen; j++ ) {
@@ -94,15 +102,5 @@ class ColumnarTransCipher {
 				c = 1;
 			}
 		}
-		
-		
-		
-		System.out.println( '\n' + "-------------------------" );
-		for ( int j=0; j<keyLen; j++ ) System.out.print( sortedKeyArr[j] );
-		System.out.println();
-		for ( int j=0; j<keyLen; j++ ) System.out.print( keyArr[j] );
-		System.out.println();
-		for ( int j=0; j<codeArr.length; j++ ) System.out.print( codeArr[j] );
-		System.out.println();
 	}
 }
