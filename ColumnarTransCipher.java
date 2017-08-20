@@ -27,16 +27,14 @@ class ColumnarTransCipher {
 				key = args[args.length-1].toUpperCase();
 			}
 		}
-		int keyLength = key.length();
-		int strLength = str.length();
-		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "Key       : " + key + "   (length: " + keyLength + ")" + '\n' );
-
-		encryptRules( str, key );
+		int keyLen = key.length();
+		int strLen = str.length();
+		System.out.println( "Input     : " + input + '\n' + "String    : " + str + '\n' + "   (length: " + strLen + ")" +'\n' + "Key       : " + key + '\n' + "   (length: " + keyLen + ")" + '\n' );
+		
+		encryptRules( str, key, keyLen, strLen );
 	}
 
-	static void encryptRules ( String str, String key ) {
-		int strLen = str.length();
-		int keyLen = key.length();
+	static void encryptRules ( String str, String key, int keyLen, int strLen ) {
 		char[] keyArr = new char[keyLen];
 		char[] sortedKeyArr = new char[keyLen];
 		char[] strArr = new char[strLen];
@@ -57,9 +55,8 @@ class ColumnarTransCipher {
 			}
 		}
 
-		int numOfRows = strLen / keyLen;
-		if ( strLen % keyLen != 0 ) numOfRows = numOfRows + 1;
-		char[][] block = new char[keyLen][numOfRows];
+
+		
 		
 		char[] codeArr = new char[strLen];
 		int columnCnt = 0;
@@ -77,14 +74,21 @@ class ColumnarTransCipher {
 			}
 			columnCnt = columnCnt + 1;
 		}
-
+		
+		if ( order[0]<8 ) System.out.print( " 0" + (order[0]+1) );
+			else System.out.print( " " + (order[0]+1) );
+		for ( int j=1; j<keyLen; j++ ) {
+			if ( order[j]<9 ) System.out.print( " 0" + (order[j]+1) );
+			else System.out.print( " " + (order[j]+1) );
+		}
+		System.out.println();
+		
+		
+		
 		System.out.println( '\n' + "-------------------------" );
 		for ( int j=0; j<keyLen; j++ ) System.out.print( sortedKeyArr[j] );
 		System.out.println();
 		for ( int j=0; j<keyLen; j++ ) System.out.print( keyArr[j] );
-		System.out.println();
-		System.out.print( (order[0]+1) );
-		for ( int j=1; j<keyLen; j++ ) System.out.print( "," + (order[j]+1) );
 		System.out.println();
 		for ( int j=0; j<codeArr.length; j++ ) System.out.print( codeArr[j] );
 		System.out.println();
