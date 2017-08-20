@@ -75,13 +75,25 @@ class ColumnarTransCipher {
 			columnCnt = columnCnt + 1;
 		}
 		
-		if ( order[0]<8 ) System.out.print( " 0" + (order[0]+1) );
+		if ( order[0]<9 ) System.out.print( " 0" + (order[0]+1) );
 			else System.out.print( " " + (order[0]+1) );
 		for ( int j=1; j<keyLen; j++ ) {
 			if ( order[j]<9 ) System.out.print( " 0" + (order[j]+1) );
 			else System.out.print( " " + (order[j]+1) );
 		}
 		System.out.println();
+		
+		int c = 1;
+		for ( int i=0; i<strLen; i++ ) {
+			if ( c != keyLen ) {
+				System.out.print( "  " + strArr[i] );
+				c += 1;
+			}
+			else {
+				System.out.println( "  " + strArr[i] );
+				c = 1;
+			}
+		}
 		
 		
 		
