@@ -5,7 +5,7 @@ class ColumnarTransCipher {
 
 	public static void main( String[] args ) {
 		
-		//create initial variables;
+		//create string variables, initial to empty;
 		//(String)input: user input string;
 		//(String)str: user input string in uppercase without spaces;
 		//(String)key: user input key;
