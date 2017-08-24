@@ -23,7 +23,7 @@ class ColumnarTransCipher {
 		}
 
 		//if input only contains one word, take the word as plaintext and execute the program
-		//with default kay;
+		//with default key;
 		else if ( args.length == 1 ) {
 			System.out.println( "no key input, default key = \"key\"" );
 			input = args[0];
