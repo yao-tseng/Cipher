@@ -43,7 +43,7 @@ class ColumnarTransCipher {
 			}
 		}
 
-		//print input data
+		//print input data;
 		int keyLen = key.length();
 		int strLen = plaintxt.length();
 		System.out.println( "Input     : " + input + '\n' + "Plaintext : " + plaintxt + '\n' + "   (length: " + strLen + ")" +'\n' + "Key       : " + key + '\n' + "   (length: " + keyLen + ")" );
@@ -54,7 +54,7 @@ class ColumnarTransCipher {
 
 	static void encrypt ( String plaintxt, String key, int keyLen, int strLen ) {
 		
-		//create variables
+		//create variables;
 		//(Array)keyArr: key letters;
 		//(Array)sortedKeyArray: key letters sorted in ascending order;
 		//(Array)strArr: string letters;
@@ -111,18 +111,18 @@ class ColumnarTransCipher {
 			columnCnt = columnCnt + 1;
 		}
 
-		//print data
+		//print data;
 		System.out.print( "Ciphertext: " );
 		for ( int j=0; j<codeArr.length; j++ ) System.out.print( codeArr[j] );
 		System.out.println();
 
-		//convert rules
+		//convert rules;
 		System.out.println( '\n' + "--convert rules--" );
-		//print key
+		//print key;
 		for ( int j=0; j<keyLen; j++ ) System.out.print( "  " + keyArr[j] );
 		System.out.println();
 
-		//print order
+		//print order;
 		if ( order[0]<9 ) System.out.print( " 0" + (order[0]+1) );
 			else System.out.print( " " + (order[0]+1) );
 		for ( int j=1; j<keyLen; j++ ) {
@@ -131,7 +131,7 @@ class ColumnarTransCipher {
 		}
 		System.out.println();
 
-		//print plaintext, print new line every "key length" letters
+		//print plaintext, print new line every "key length" letters;
 		int c = 1;
 		for ( int i=0; i<strLen; i++ ) {
 			if ( c != keyLen ) {
