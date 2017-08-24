@@ -7,10 +7,10 @@ class ColumnarTransCipher {
 		
 		//create string variables, initial to empty;
 		//(String)input: user input string;
-		//(String)str: user input string in uppercase without spaces;
+		//(String)plaintxt: user input string in uppercase without spaces;
 		//(String)key: user input key;
 		String input = "";
-		String str = "";
+		String plaintxt = "";
 		String key = "";
 
 		//check user inputs;
@@ -18,7 +18,7 @@ class ColumnarTransCipher {
 		if ( args.length == 0 ) {
 			System.out.println( "empty input, execute default..." );
 			input = "life was like a box of chocolates";
-			str = "LIFEWASLIKEABOXOFCHOCOLATES";
+			plaintxt = "LIFEWASLIKEABOXOFCHOCOLATES";
 			key = "CIPHER";
 		}
 
@@ -27,7 +27,7 @@ class ColumnarTransCipher {
 		else if ( args.length == 1 ) {
 			System.out.println( "no key input, default key = \"key\"" );
 			input = args[0];
-			str = input.toUpperCase();
+			plaintxt = input.toUpperCase();
 			key = "CIPHER";
 		}
 
@@ -38,21 +38,21 @@ class ColumnarTransCipher {
 		else {
 			for ( int i=0; i<args.length-1; i++ ) {
 				input += args[i] + " ";
-				str += args[i].toUpperCase();
+				plaintxt += args[i].toUpperCase();
 				key = args[args.length-1].toUpperCase();
 			}
 		}
 
 		//print input data
 		int keyLen = key.length();
-		int strLen = str.length();
-		System.out.println( "Input     : " + input + '\n' + "Plaintext : " + str + '\n' + "   (length: " + strLen + ")" +'\n' + "Key       : " + key + '\n' + "   (length: " + keyLen + ")" );
+		int strLen = plaintxt.length();
+		System.out.println( "Input     : " + input + '\n' + "Plaintext : " + plaintxt + '\n' + "   (length: " + strLen + ")" +'\n' + "Key       : " + key + '\n' + "   (length: " + keyLen + ")" );
 		
-		encrypt( str, key, keyLen, strLen );
+		encrypt( plaintxt, key, keyLen, strLen );
 		System.out.println();
 	}
 
-	static void encrypt ( String str, String key, int keyLen, int strLen ) {
+	static void encrypt ( String plaintxt, String key, int keyLen, int strLen ) {
 		
 		//create variables
 		//(Array)keyArr: key letters;
@@ -64,7 +64,7 @@ class ColumnarTransCipher {
 		
 		//copy key string and plaintext string letter by letter into arrays;
 		for ( int i=0; i<keyLen; i++ ) keyArr[i] = key.charAt(i);
-		for ( int i=0; i<strLen; i++ ) strArr[i] = str.charAt(i);
+		for ( int i=0; i<strLen; i++ ) strArr[i] = plaintxt.charAt(i);
 		System.arraycopy( keyArr, 0, sortedKeyArr, 0, keyLen );
 		Arrays.sort(sortedKeyArr);
 		
