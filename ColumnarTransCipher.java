@@ -33,7 +33,7 @@ class ColumnarTransCipher {
 
 		//if input has more than two words, take all words except the last one as plaintext
 		// and the last word as the key;
-		//convert plaintext to uppercase;
+		//convert plaintext and key to uppercase;
 		//plaintext should contain no spaces;
 		else {
 			for ( int i=0; i<args.length-1; i++ ) {
