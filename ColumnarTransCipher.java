@@ -23,7 +23,7 @@ class ColumnarTransCipher {
 		}
 
 		//if input only contains one word, take the word as plaintext and execute the program
-		//with default key;
+		// with default key;
 		else if ( args.length == 1 ) {
 			System.out.println( "no key input, default key = \"key\"" );
 			input = args[0];
@@ -32,7 +32,7 @@ class ColumnarTransCipher {
 		}
 
 		//if input has more than two words, take all words except the last one as plaintext
-		//and the last word as the key;
+		// and the last word as the key;
 		//convert plaintext to uppercase;
 		//plaintext should contain no spaces;
 		else {
@@ -73,9 +73,9 @@ class ColumnarTransCipher {
 		//set all elements in the array to (length of key + 1);
 		for ( int i=0; i<keyLen; i++ ) order[i] = keyLen+1;
 		//for every element in the sorted key array, find the corresponding position in the
-		//original kay array and update the order array;
+		// original kay array and update the order array;
 		//if statement checks the letters and deals with duplicate letters; if element in
-		//order array equals (length of key + 1), position not taken yet;
+		// order array equals (length of key + 1), position not taken yet;
 		for ( int i=0; i<keyLen; i++ ) {
 			for ( int j=0; j<keyLen; j++) {
 				if ( sortedKeyArr[i] == keyArr[j] && order[j] == keyLen+1 ) {
