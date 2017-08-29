@@ -24,7 +24,6 @@ def EncryptCipher():
     
 
 def DecryptCipher():
-    print ("Running Decryption.....")
     string = input("Enter ciphertext: ")
     while len(string) == 0:
         string = input("Enter ciphertext: ")
