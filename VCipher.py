@@ -12,12 +12,14 @@ def EncryptCipher():
     key = key.lower()       #create a consistent key for coding
     ciphertext = ""         #blank string for converted text
     for letter in string:
-        if letter.isalpha() and letter.isupper():                                               #Check for uppercase letter conversion
-            ciphertext = ciphertext + chr(((ord(letter)+ord(key[i%len(key)])-97+13)%26)+65)     #Convert letter at i location with interger value of key at remainder of i/(length of key) location
-            i = i+1                                                                             #Progress index
-        elif letter.isalpha() and letter.islower():                                             #Check for lowercase letter conversion
-            ciphertext = ciphertext + chr(((ord(letter)+ord(key[i%len(key)])-97+7)%26)+97)      #Convert letter at i location with interger value of key at remainder of i/(length of key) location
-            i = i+1                                                                             #Progress index
+        if letter.isalpha() and letter.isupper():                       #Check for uppercase letter conversion
+            ciphertext = ciphertext + \                                 #Convert letter at i location with interger value of key 
+                chr(((ord(letter)+ord(key[i%len(key)])-97+13)%26)+65)       #at remainder of i/(length of key) location
+            i = i+1                                                     #Progress index
+        elif letter.isalpha() and letter.islower():                     #Check for lowercase letter conversion
+            ciphertext = ciphertext + \                                 #Convert letter at i location with interger value of key 
+                chr(((ord(letter)+ord(key[i%len(key)])-97+7)%26)+97)        #at remainder of i/(length of key) location
+            i = i+1                                                     #Progress index
     print ("Ciphertext: " + ciphertext)
     
 
@@ -35,10 +37,12 @@ def DecryptCipher():
     plaintext = ""
     for letter in string:
         if letter.isalpha() and letter.isupper():
-            plaintext = plaintext + chr(((ord(letter)-(ord(key[i%len(key)])-97)+13)%26)+65)
+            plaintext = plaintext + \
+                chr(((ord(letter)-(ord(key[i%len(key)])-97)+13)%26)+65)
             i = i+1
         elif letter.isalpha() and letter.islower():
-            plaintext = plaintext + chr(((ord(letter)-(ord(key[i%len(key)])-97)+7)%26)+97)
+            plaintext = plaintext + \
+                chr(((ord(letter)-(ord(key[i%len(key)])-97)+7)%26)+97)
             i = i+1
         else:
             plaintext = plaintext + string[i]
