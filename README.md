@@ -123,3 +123,19 @@ lsbhtweflekooilooefixcsaaca
 
 ____________________
 
+**Pig Latin**
+
+Type: Translation
+Difficulty: Moderate
+
+Description:
+
+Pig Latin alters words in the English language using a simple set of rules. It takes the first consonant or consonant cluster and moves it to the end while adding 'ay' to it. If the word begins with a vowel then only 'way' is added to the end.
+
+Example:
+
+Plaintext: 
+How are you today?
+
+Pig Latin: 
+Owhay areway ouyay odaytay?
