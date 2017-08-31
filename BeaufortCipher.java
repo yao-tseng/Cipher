@@ -51,7 +51,7 @@ class BeaufortCipher {
 
 	static void encrypt( String plaintxt, String key ) {
 		//create variables;
-		//(Array)offset: shift amount of each letters in plaintext;
+		//(Integer)offset: shift amount of each letters in plaintext;
 		//(Integer)code: letter in ciphertext in ASCII;
 		//(Array)codeArr: an array to store the ciphertext;
 		int offset = 0;
