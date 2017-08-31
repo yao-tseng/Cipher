@@ -2,7 +2,7 @@ Welcome to the cipher repository. Please read below for descriptions on each cip
 
 ____________________
 
-Atbash Cipher
+**Atbash Cipher**
 
 Type: Substitution
 Difficulty: Easy
@@ -25,7 +25,7 @@ z y x w v u t s r q p o n m l k j i h g f e d c b a
 
 ____________________
 
-Autokey Cipher
+**Autokey Cipher**
 
 Type: Key
 Difficulty: Moderate
@@ -45,7 +45,7 @@ Ciphertext: Qnxepv yt wtwp
 
 ____________________
 
-Beaufort Cipher
+**Beaufort Cipher**
 
 Type: Substitution
 Difficulty:
@@ -66,7 +66,7 @@ Ciphertext: ixkiqnkluieog
 
 ____________________
 
-Caesar Cipher
+**Caesar Cipher**
 
 Type: Substitution
 Difficulty: Easy
@@ -88,7 +88,7 @@ zkdwzrxogdzrrgfkxfngr
 
 ____________________
 
-Columnar Trans Cipher
+**Columnar Trans Cipher**
 
 Type: Key
 Difficulty: Hard
@@ -107,16 +107,19 @@ cipher
 
 Process:
 
-C I P H E R
-1 4 5 3 2 6
-
-l i f e w a
-s l i k e a
-b o x o f c
-h o c o l a
-t e s
+C|I|P|H|E|R
+-|-|-|-|-|-
+1|4|5|3|2|6
+l|i|f|e|w|a
+s|l|i|k|e|a
+b|o|x|o|f|c
+h|o|c|o|l|a
+t|e|s
 
 C(lsbht) E(wefl) H(ekoo) I(ilooe) P(fixcs) R(aaca)
 
 Ciphertext:
 lsbhtweflekooilooefixcsaaca
+
+____________________
+
