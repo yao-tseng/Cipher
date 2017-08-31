@@ -65,3 +65,23 @@ From h to e (2nd letters), the offset is 23 the integer value of letter x
 Ciphertext: ixkiqnkluieog
 
 ____________________
+
+Caesar Cipher
+
+Type: Substitution
+Difficulty: Easy
+
+Description:
+
+This cipher is an easy one to break. Caesar cipher take the plaintext and shifts it an integer amount to the left to create the ciphertext.
+
+Method:
+
+Plaintext:
+What would a wood chuck do?
+
+Shift:
+3
+
+Ciphertext:
+zkdwzrxogdzrrgfkxfngr
