@@ -85,3 +85,38 @@ Shift:
 
 Ciphertext:
 zkdwzrxogdzrrgfkxfngr
+
+____________________
+
+Columnar Trans Cipher
+
+Type: Key
+Difficulty: Hard
+
+Description:
+
+Columnar Trans takes the length of the key to create that many columns. Then it takes the plaintext and inserts each letter into columns left to right wrapping back to the first column each time. In alphabetical order of the letters in the key, it takes the column of that letter from top to bottom and adds it to the ciphertext.
+
+Example:
+
+Plaintext:
+Life was like a box of chocolates.
+
+Key:
+cipher
+
+Process:
+
+C I P H E R
+1 4 5 3 2 6
+
+l i f e w a
+s l i k e a
+b o x o f c
+h o c o l a
+t e s
+
+C(lsbht) E(wefl) H(ekoo) I(ilooe) P(fixcs) R(aaca)
+
+Ciphertext:
+lsbhtweflekooilooefixcsaaca
