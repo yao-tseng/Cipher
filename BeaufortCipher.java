@@ -54,14 +54,14 @@ class BeaufortCipher {
 		//(Integer)offset: shift amount of each letters in plaintext;
 		//(Integer)code: letter in ciphertext in ASCII;
 		//(Array)codeArr: an array to store the ciphertext;
-		int offset = 0;
+		int keyIndex = 0;
 		int code = 0;
 		char[] codeArr = new char[plaintxt.length()];
 
-		//convert letter at offset location with integer value of key at remainder of i/(lenght of key) location
+		//the ciphertext is the letter corresponding to the integer value(0~25) of the offset from plaintext to key;
 		for ( int i=0; i<plaintxt.length(); i++ ) {
-			offset = i % key.length();
-			code = ( (int)key.charAt(offset) - (int)plaintxt.charAt(i) + 26 ) % 26 + (int)'A';
+			keyIndex = i % key.length();
+			code = ( (int)key.charAt(keyIndex) - (int)plaintxt.charAt(i) + 26 ) % 26 + (int)'A';
 			codeArr[i] = (char)code;
 		}
 
@@ -72,6 +72,14 @@ class BeaufortCipher {
 
 		//print out convert rules
 		System.out.println( '\n' + "--convert rules--" );
-		for ( int i=0; i<plaintxt.length(); i++ ) System.out.println( plaintxt.charAt(i) + "-->" + codeArr[i] + " (offset: " + (((int)key.charAt(i%key.length()) + 65) % 26) + ")" );	
+		System.out.println( "plain_text --> cipher_text" + '\n' + "       (cipher_text : index_of_letter = key - plain_text)" );
+		for ( int i=0; i<plaintxt.length(); i++ ) {
+			String cipherIndex;
+			keyIndex = i % key.length();
+			int math = ((int)key.charAt(keyIndex) - (int)plaintxt.charAt(i) + 26) % 26;
+			if ( math<10 ) cipherIndex = "0" + math;
+			else cipherIndex = "" + math;
+			System.out.println( plaintxt.charAt(i) + "-->" + codeArr[i] + "  (" +  codeArr[i] + ":" + cipherIndex + " = " + key.charAt(keyIndex) + "-" + plaintxt.charAt(i) + ")" );
+		}
 	}
 }
