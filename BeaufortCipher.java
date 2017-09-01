@@ -65,12 +65,12 @@ class BeaufortCipher {
 			codeArr[i] = (char)code;
 		}
 
-		//print out ciphertext
+		//print out ciphertext;
 		System.out.print( "Ciphertext: " );
 		for ( int i=0; i<plaintxt.length(); i++ ) System.out.print( codeArr[i] );
 		System.out.println();
 
-		//print out convert rules
+		//print out convert rules;
 		System.out.println( '\n' + "--convert rules--" );
 		System.out.println( "plain_text --> cipher_text" + '\n' + "       (cipher_text : index_of_letter = key - plain_text)" );
 		for ( int i=0; i<plaintxt.length(); i++ ) {
