@@ -9,14 +9,14 @@ class CaesarCipher {
 		
 		if ( args.length < 2 ) {
 			System.out.println( "input incorrect, execute default.." );
-			str = "hakuna matata";
+			str = "hakunamatata";
 		}
 		else {
 			try { 
-				for ( int i=0; i<args.length-1; i++ ) str += args[i] + " ";
+				for ( int i=0; i<args.length-1; i++ ) str += args[i];
 				shift = Integer.parseInt( args[args.length-1] );
 			} catch ( NumberFormatException nfe ) {
-				str += args[args.length-1] + " ";
+				str += args[args.length-1];
 			}
 		}
 		System.out.println( "String: " + str + '\n' + "Shift : " + shift );
