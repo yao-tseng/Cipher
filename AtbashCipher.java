@@ -49,7 +49,7 @@ public class AtbashCipher {
 		encryptRules( plain, cipher );
 	}
 
-	//(function)encryptRules: encrypt rules;
+	//(Function)encryptRules: encrypt rules;
 	//convert each alphabet to its reverse, print out the arrays;
 	public static void encryptRules( char[] plain, char[] cipher ) {
 		for ( int p=0; p<26; p++ ) System.out.print( plain[p] );
@@ -58,7 +58,7 @@ public class AtbashCipher {
 		System.out.println();
 	}
 
-	//(function)encrypt: encrypt input string;
+	//(Function)encrypt: encrypt input string;
 	//return codeArr as ciphertext;
 	public static char[] encrypt( String plaintxt, char[] plain, char[] cipher ) {
 		//(Array)codeArr: an array to store ciphertext;
