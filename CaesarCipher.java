@@ -27,7 +27,7 @@ class CaesarCipher {
 
 	static void shiftRules( int shift ) {
 		String plain = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		String cipher = plain.substring(shift) + plain.substring(0, shift);
+		String cipher = plain.substring(shift % 26) + plain.substring(0, shift % 26);
 		System.out.println("\n" + "Plain : " + plain);
 		System.out.println( "Cipher: " + cipher );
 	}
