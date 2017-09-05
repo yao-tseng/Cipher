@@ -49,6 +49,7 @@ class BeaufortCipher {
 		encrypt( plaintxt, key );
 	}
 
+	//(Function)encrypt: encryption and encrypt rules;
 	static void encrypt( String plaintxt, String key ) {
 		//create variables;
 		//(Integer)offset: shift amount of each letters in plaintext;
