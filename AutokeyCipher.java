@@ -5,55 +5,67 @@ class AutokeyCipher {
 
 	public static void main( String[] args ) {
 		String input = "";
-		String str = "";
+		String plaintxt = "";
 		String key = "SECRET";
 		
 		if ( args.length == 0 ) {
 			System.out.println( "empty imput, execute default..." );
 			input = "hold my own";
-			str = "HOLDMYOWN";
+			plaintxt = "HOLDMYOWN";
 		}
 		else if ( args.length == 1 ) {
 			System.out.println( "no key input, default key = \"secret\"" );
 			input = args[0];
-			str = input.toUpperCase();
+			plaintxt = input.toUpperCase();
 			key = "SECRET";
 		}
 		else {
 			for ( int i=0; i<args.length-1; i++ ) {
 				input += args[i] + " ";
-				str += args[i].toUpperCase();
+				plaintxt += args[i].toUpperCase();
 				key = args[args.length-1].toUpperCase();
 			}
 		}
-		System.out.print( "Input    : " + input + '\n' + "String   : " + str + '\n' + "Key      : " + key );
+		System.out.print( "Input     : " + input + '\n' + "Key       : " + key );
 
-		String autoKey = encryptRules( str, key );
-		System.out.println( '\n' + "Auto Key : " + autoKey + '\n' );
+		String autoKey = keyGenerate( plaintxt, key );
+		System.out.println( '\n' + "Auto Key  : " + autoKey );
 
-		encrypt( str, autoKey );
+		char[] codeArr = encrypt( plaintxt, autoKey );
+		System.out.print( "Plaintext : " + plaintxt + '\n' + "Ciphertext: " );
+		for ( int i=0; i<plaintxt.length(); i++ ) System.out.print( codeArr[i] );
+		System.out.println();
+
+		encryptRules( plaintxt, autoKey, codeArr );
 	}
 
-	static String encryptRules( String str, String key ) {
-		int keyLength = str.length();
-		String autoKey = (key + str);
+	static String keyGenerate( String plaintxt, String key ) {
+		int keyLength = plaintxt.length();
+		String autoKey = (key + plaintxt);
 		autoKey = autoKey.substring(0, keyLength);
 		
 		return autoKey;
 	}
 
-	static void encrypt( String str, String autoKey ) {
+	static char[] encrypt( String plaintxt, String autoKey ) {
 		int code = 0;
-		char[] codeArr = new char[str.length()];
-		
-		for ( int i=0; i<str.length(); i++ ) {
-			code = ( (int)str.charAt(i) + (int)autoKey.charAt(i) ) % 26 + (int)'A';			
-			System.out.println( str.charAt(i) + "-->" + (char)code + "(shift: " + (((int)autoKey.charAt(i) + 65) % 26) + ")" );
+		char[] codeArr = new char[plaintxt.length()];
+
+		for ( int i=0; i<plaintxt.length(); i++ ) {
+			code = ( (int)plaintxt.charAt(i) + (int)autoKey.charAt(i) ) % 26 + 65;		
 			codeArr[i] = (char)code;
 		}
 		
-		System.out.print( '\n' + "Plaintext : " + str + '\n' + "Ciphertext: " );
-		for ( int i=0; i<str.length(); i++ ) System.out.print( codeArr[i] );
-		System.out.println();
+		return codeArr;
+	}
+
+	static void encryptRules( String plaintxt, String autoKey, char[] codeArr ) {
+		System.out.println( '\n' + "--convert rules--" );
+		for ( int i=0; i<plaintxt.length(); i++ ) {
+			int shift = (int)autoKey.charAt(i) - 65;
+			System.out.print( plaintxt.charAt(i) + "-->" + codeArr[i] + " (shift: " );
+			if ( shift<10 ) System.out.print( "0" );
+			System.out.println( shift + ")" );
+		}
 	}
 }
