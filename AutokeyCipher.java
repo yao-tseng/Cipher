@@ -88,7 +88,7 @@ class AutokeyCipher {
 			int shift = (int)autoKey.charAt(i) - 65;
 			System.out.print( plaintxt.charAt(i) + "-->" + codeArr[i] + " (shift: " );
 			if ( shift<10 ) System.out.print( "0" );
-			System.out.println( shift + ")" );
+			System.out.println( shift + "/" + autoKey.charAt(i) + ")" );
 		}
 	}
 }
