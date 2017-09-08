@@ -8,17 +8,24 @@ public class RailFenceCipher {
 		//(String)input: user input;
 		//(String)plaintxt: user input in uppercase without spaces;
 		//(Integer)numOfRails: user set number of rails;
-		String input = "to infinity and beyond";
-		String plaintxt = "TOINFINITYANDBEYOND";
+		String input = "";
+		String plaintxt = "";
 		int numOfRails = 3;
 		
 		//user input is empty, use default values;
-		if ( args.length == 0 ) System.out.println( "empty input, execute default..." );
-		
+		if ( args.length == 0 ) {
+			System.out.println( "empty input, execute default..." );
+			input = "to infinity and beyond";
+			plaintxt = "TOINFINITYANDBEYOND";
+		}
+
 		//if user input is a single number, set to be the number of rail;
 		//if user input is a single word, set to be the plaintext;
 		else if ( args.length == 1 ) {
-			try { numOfRails = Integer.parseInt( args[0] );
+			try { 
+				input = "to infinity and beyond";
+				plaintxt = "TOINFINITYANDBEYOND";
+				numOfRails = Integer.parseInt( args[0] );
 			} catch ( NumberFormatException nfe ) {
 				input = args[0];
 				plaintxt = args[0];
