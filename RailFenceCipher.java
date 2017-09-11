@@ -60,6 +60,8 @@ public class RailFenceCipher {
 		//print ciphertext;
 		for ( int i=0; i<plaintxt.length(); i++ ) System.out.print(codeArr[i]);
 		System.out.println();
+
+		encryptRules( numOfRails, plaintxt );
 	}
 
 	//(Function)encrypt: encrypt plaintext;
@@ -85,5 +87,29 @@ public class RailFenceCipher {
 		}
 
 		return arr;
+	}
+
+	//(Function)encryptRules: encryption rules;
+	public static void encryptRules( int numOfRails, String plaintxt ) {
+		//(Integer)indexPt: index of letters in plaintext;
+		//(Integer)railCnt: rail count;
+		//(Array)arr: array for storing ciphertext;
+		//(Integer)indexCt: index of letters in ciphertext;
+		int indexPt = 0;
+		int railCnt = 0;
+		char[] arr = new char[plaintxt.length()];
+		int indexCt = 0;
+
+		System.out.println( '\n' + "--convert rule--" );
+		while( railCnt<numOfRails ) {		
+			for ( indexPt=0; indexPt<plaintxt.length(); indexPt++ ) {
+				int math = indexPt % ( (numOfRails-1) * 2 );
+				if ( math == railCnt || math == ( (numOfRails-1) * 2 - railCnt) )
+					System.out.print( plaintxt.charAt(indexPt) );
+				else System.out.print( "-" );
+			}
+			railCnt = railCnt + 1;
+			System.out.println();
+		}
 	}
 }
