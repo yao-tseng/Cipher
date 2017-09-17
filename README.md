@@ -156,9 +156,9 @@ Example:
 Plaintext: Never Gonna Give You Up
 Number of rails: 4
 
-n-----o-----v-----p
--e---g-n---i-e---u-
---v-r---n-g---y-u--
----e-----a-----o---
+n-----o-----v-----p  
+-e---g-n---i-e---u-  
+--v-r---n-g---y-u--  
+---e-----a-----o---  
 
 Ciphertext: novpegnieuvrngyueao
