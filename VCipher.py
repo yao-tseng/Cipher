@@ -13,12 +13,12 @@ def EncryptCipher():
     ciphertext = ""         #blank string for converted text
     for letter in string:
         if letter.isalpha() and letter.isupper():                       #Check for uppercase letter conversion
-            ciphertext = ciphertext + chr(((ord(letter)+ord(key[i%len(key)])-97+13)%26)+65)
-            #Convert letter at i location with interger value of key at remainder of i/(length of key) location
+            ciphertext = ciphertext + chr(((ord(letter)+ord(key[i%len(key)])-97+14)%26)+65)
+            #Convert letter at i location with integer value of key at remainder of i/(length of key) location
             i = i+1                                                     #Progress index
         elif letter.isalpha() and letter.islower():                     #Check for lowercase letter conversion
-            ciphertext = ciphertext + chr(((ord(letter)+ord(key[i%len(key)])-97+7)%26)+97)
-            #Convert letter at i location with interger value of key at remainder of i/(length of key) location
+            ciphertext = ciphertext + chr(((ord(letter)+ord(key[i%len(key)])-97+8)%26)+97)
+            #Convert letter at i location with integer value of key at remainder of i/(length of key) location
             i = i+1                                                     #Progress index
     print ("Ciphertext: " + ciphertext)
     
