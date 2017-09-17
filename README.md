@@ -47,7 +47,7 @@ ____________________
 
 **Beaufort Cipher**
 
-Type: Substitution
+Type: Key, Substitution
 Difficulty:
 
 Description:
@@ -162,3 +162,44 @@ n-----o-----v-----p
 ---e-----a-----o---  
 
 Ciphertext: novpegnieuvrngyueao
+
+____________________
+
+**ROT 13 Cipher**
+
+Type: Substitution
+Difficulty: Easy
+
+Description:
+
+Rot 13 is a simple substitution cipher that replaces the letter in the plaintext with the letter 13 places after it. Since there are 26 letters in the alphabet, this cipher is its own inverse. Putting in the cipher text in the same code for encryption will also decrypt the text.
+
+Example:
+
+Plaintext: Sweet dreams are made of these
+
+s|w|e|e|t|d|r|e|a|m|s|a|r|e|m|a|d|e|o|f|t|h|e|s|e
+f|j|r|r|g|q|e|r|n|z|f|n|e|r|z|n|q|r|b|s|g|u|r|f|r
+
+Ciphertext: fjrrgqernzfnerznqrbsgurfr
+
+____________________
+
+**Vigenere Cipher**
+
+Type: Key, Substitution
+Difficulty: Medium
+
+Description:
+
+The Vigenere Cipher uses a key to offset the input text a number of spaces to the right based on the integer value of the letter in the key at the same location as the input text. If the key is too short then the key repeats itself.
+
+Example:
+
+Plaintext: That's All Folks!
+Key: key
+
+t is offset to the right k(11) letters resulting in e
+h is offset to the right e(5) letters resulting in m
+
+Ciphertext: emzexzwqezqjd
