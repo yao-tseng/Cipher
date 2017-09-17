@@ -139,3 +139,26 @@ How are you today?
 
 Pig Latin: 
 Owhay areway ouyay odaytay?
+
+____________________
+
+**Rail Fence Cipher**
+
+Type: Transposition
+Difficulty: Hard
+
+Description:
+
+Rail Fence takes an input string and the number of rails to transpose the text across. The input string is transposed diagonally across the rails until it reaches the last rail and then reverses direction diagonally back up to the first rail. The cipher code is then taken from the rails starting with the first rail and placing the letters in sequence.
+
+Example:
+
+Plaintext: Never Gonna Give You Up
+Number of rails: 4
+
+n-----o-----v-----p
+-e---g-n---i-e---u-
+--v-r---n-g---y-u--
+---e-----a-----o---
+
+Ciphertext: novpegnieuvrngyueao
